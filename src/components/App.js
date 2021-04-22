@@ -1,9 +1,12 @@
 import React from 'react';
-import '../assets/css/main.scss';
+import MainContent from './MainContent';
+import '../assets/css/main.css';
 
 function App() {
   return (
-    <p>welcome payonerr</p>
+    <>
+      <MainContent />
+    </>
   );
 }
 
