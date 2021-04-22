@@ -44,6 +44,7 @@ const UpcommingTemperatures = ({
 }) => {
   const [pageIndex, setPageIndex] = useState(0);
   const sliderRef = useRef(null);
+  const maxPageNumber = weatherData.length - 3;
 
   const handlePrevButtonClick = () => {
     if (pageIndex > 0) {
@@ -52,7 +53,7 @@ const UpcommingTemperatures = ({
   };
 
   const handleNextButtonClick = () => {
-    if (pageIndex < 2) {
+    if (pageIndex < maxPageNumber) {
       setPageIndex(pageIndex + 1);
     }
   };
@@ -77,10 +78,6 @@ const UpcommingTemperatures = ({
     }
   }, [pageIndex]);
 
-  useEffect(() => {
-    console.log('width', sliderRef.current ? sliderRef.current.offsetWidth : 0);
-  }, [sliderRef.current]);
-
   return (
     <Grid container item xs={12} md={9}>
       <Grid container item xs={12} justify="space-around" alignItems="center" style={{ marginBottom: 16 }}>
@@ -90,7 +87,7 @@ const UpcommingTemperatures = ({
           </IconButton>
         </Tooltip>
         <Tooltip title="Scroll Right">
-          <IconButton style={{ backgroundColor: '#fff' }} color="secondary" disabled={pageIndex === 2} onClick={handleNextButtonClick} aria-label="next">
+          <IconButton style={{ backgroundColor: '#fff' }} color="secondary" disabled={pageIndex === maxPageNumber} onClick={handleNextButtonClick} aria-label="next">
             <ArrowForwardIcon />
           </IconButton>
         </Tooltip>

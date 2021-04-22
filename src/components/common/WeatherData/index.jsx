@@ -9,17 +9,14 @@ const WeatherData = ({
   value,
   unit,
   classes
-}) => {
-  console.log(unit);
-  return (
-    <div className={classes.root}>
-      <img src={tempFormatter[unit].icon} alt="weather Icon" className={classes.icon} />
-      <Typography variant="span" aria-label={label} className={classes.info} color="primary">
-        {`${value}${tempFormatter[unit].unit}`}
-      </Typography>
-    </div>
-  );
-};
+}) => (
+  <div className={classes.root}>
+    <img src={tempFormatter[unit].icon} alt="weather Icon" className={classes.icon} />
+    <Typography variant="span" aria-label={label} className={classes.info} color="primary">
+      {`${value}${tempFormatter[unit].unit}`}
+    </Typography>
+  </div>
+);
 
 WeatherData.propTypes = {
   label: PropTypes.string.isRequired,

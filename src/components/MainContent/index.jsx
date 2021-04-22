@@ -11,13 +11,10 @@ import { bindActionCreators } from 'redux';
 import { weatherDataActions } from 'actions';
 import styles from './style';
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return {
-    weatherData: state.weatherData,
-    selectedDayIndex: state.selectedDayIndex
-  };
-};
+const mapStateToProps = (state) => ({
+  weatherData: state.weatherData,
+  selectedDayIndex: state.selectedDayIndex
+});
 
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(
@@ -51,11 +48,11 @@ const MainContent = ({
 
   if (!loading && Object.keys(weatherData).length === 0) {
     return (
-      <Grid className={classes.root} container alignItems="center" justify="center" item xs={12} md={10} lg={8}>
-        <Typography variant="p" color="error">
+      <Grid className={classes.root} container alignItems="center" justify="center" item wrap="nowrap" xs={12} md={10} lg={8}>
+        <Typography variant="p" color="#F0F8FF">
           Failed to get Data from API
-          <ErrorIcon fontSize="small" color="error" />
         </Typography>
+        <ErrorIcon fontSize="small" color="error" />
       </Grid>
     );
   }
@@ -66,7 +63,7 @@ const MainContent = ({
         loading ? (
           <>
             <CircularProgress aria-describedby="p" aria-busy={loading} style={{ margin: 16 }} />
-            <Typography variant="p" color="primary">Loading...</Typography>
+            <Typography variant="p" color="#F0F8FF">Loading...</Typography>
           </>
         ) : (
           <>
