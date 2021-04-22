@@ -4,22 +4,17 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import {
   Grid,
-  FormLabel,
   FormControlLabel,
   RadioGroup,
-  Radio
+  Radio,
+  withStyles,
+  useMediaQuery
 } from '@material-ui/core';
 // import withStyles from '@material-ui/core/styles/withStyles';
-// import { makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import { tempUnitActions } from 'actions';
 import { FAHRENHEIT, CELCIUS } from 'helpers/constants';
-
-/* const style = makeStyles({
-  root: {
-    display: 'flex',
-    justifyContent: 'center'
-  }
-}); */
+import style from './style';
 
 const mapStateToProps = (state) => {
   const { tempUnit } = state;
@@ -35,8 +30,10 @@ const mapDispatchToProps = (dispatch) => ({
   )
 });
 
-const UnitSwitch = ({ tempUnit, actions }) => {
+const UnitSwitch = ({ tempUnit, actions, classes }) => {
   const [value, setValue] = useState(tempUnit);
+  const theme = useTheme();
+  const isMobileView = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleRadioChange = (event) => {
     const unitValue = event.target.value;
@@ -49,12 +46,11 @@ const UnitSwitch = ({ tempUnit, actions }) => {
   };
 
   return (
-    <Grid item container xs={12} justify="center" alignItems="center">
+    <Grid item container xs={12} className={classes.root} justify="center" alignItems="center">
       <Grid item xs={12} md={8}>
-        <FormLabel component="legend">Temperature Units</FormLabel>
-        <RadioGroup row aria-label="temperature-switch" name="temperature-switch" value={value} onChange={handleRadioChange}>
-          <FormControlLabel value={CELCIUS} control={<Radio />} label="Celcius" checked={value === CELCIUS} />
-          <FormControlLabel value={FAHRENHEIT} control={<Radio />} label="Fahrenheit" checked={value === FAHRENHEIT} />
+        <RadioGroup row aria-label="Switch temperature unit" name="temperature-switch" className={classes.radioGroup} value={value} onChange={handleRadioChange}>
+          <FormControlLabel className={classes.radioLabel} labelPlacement={isMobileView ? 'top' : 'end'} value={CELCIUS} control={<Radio />} label="Celcius" checked={value === CELCIUS} />
+          <FormControlLabel className={classes.radioLabel} labelPlacement={isMobileView ? 'top' : 'end'} value={FAHRENHEIT} control={<Radio />} label="Fahrenheit" checked={value === FAHRENHEIT} />
         </RadioGroup>
       </Grid>
     </Grid>
@@ -62,11 +58,9 @@ const UnitSwitch = ({ tempUnit, actions }) => {
 };
 
 UnitSwitch.propTypes = {
-  classes: PropTypes.shape({
-    radioGroup: PropTypes.string
-  }).isRequired,
+  classes: PropTypes.object.isRequired,
   tempUnit: PropTypes.string.isRequired,
   actions: PropTypes.object.isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UnitSwitch);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(style)(UnitSwitch));

@@ -4,12 +4,12 @@ import { convertTemperature } from './utils';
 // return an object that has date as keys and weather data array for each date as values
 export const formatAPIData = (payload, segNum = 40, daysNum = 5) => {
   if (segNum % daysNum !== 0) return null;
-  const todayDate = moment(new Date());
+  const todayDate = moment();
   const dataPerDays = new Map();
   for (let i = 0; i < segNum; i += 1) {
     const date = moment(payload[i].dt_txt);
-    if (date.isBetween(todayDate.toISOString(), moment().add(daysNum - 1, 'd').toISOString())) {
-      const dateKey = date.format('YYYY MM DD');
+    if (date.isBetween(todayDate.format('YYYY MM DD'), moment().add(daysNum, 'd').format('YYYY MM DD'))) {
+      const dateKey = date.format('MM/DD');
       const item = {
         date: date.format('hh:mm a'),
         temp: payload[i].main.temp,
