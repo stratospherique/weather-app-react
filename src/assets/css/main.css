@@ -21,9 +21,9 @@
   align-items: center;
   min-height: 700px;
   background-color: aliceblue;
-  background-image: url('../img/illustrations/bg-image.svg'), url('../img/illustrations/bg-image.svg'), url('../img/illustrations/bg-image.svg'), url('../img/illustrations/bg-image.svg');
-  background-repeat: no-repeat;
-  background-size: 60px 60px, 60px 60px, 60px 60px, 60px 60px;
+  background-image: url('../img/illustrations/bg-image.svg'), url('../img/illustrations/bg-image.svg'), url('../img/illustrations/bg-image.svg'), url('../img/illustrations/bg-image.svg'), url('../img/illustrations/bg-image.svg');
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+  background-size: 60px 60px, 60px 60px, 60px 60px, 60px 60px, 5px 5px;
   background-position: left 7vw top 6vh, right 20px top 20px, left 20px bottom 20px, right 7vw bottom 6vh;
 }
 

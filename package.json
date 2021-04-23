@@ -25,7 +25,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "test-helpers": "jest src/helpers",
-    "test-reducers": "jest src/reducers"
+    "test-reducers": "jest src/reducers",
+    "test-actions": "jest src/actions"
   },
   "eslintConfig": {
     "extends": [

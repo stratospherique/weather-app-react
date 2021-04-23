@@ -7,6 +7,9 @@ const styles = (theme) => ({
     [theme.breakpoints.up('md')]: {
       height: '80%'
     }
+  },
+  message: {
+    color: '#F0F8FF'
   }
 });
 
