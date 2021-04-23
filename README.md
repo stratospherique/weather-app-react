@@ -27,7 +27,7 @@ HTML | CSS(SASS) | Javascript | React | Redux
 
 ## ✨ Live Demo
 
-You can look at it [here](https://proto-dashboard.netlify.com/)
+You can look at it [here](https://stratospherique.github.io/weather-app-react/)
 
 ## 🚀 Getting Started
 
