@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+![beta development](https://img.shields.io/badge/beta-development-green?style=flat-square)
+![Hireable](https://cdn.rawgit.com/hiendv/hireable/master/styles/default/yes.svg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 💻 Weather APP (React)
 
-## Available Scripts
+![alt text](web.png)
+<p align="center">
+<img src="mobile.png">
+</p>
+A **weather App** that displays weather info for the city of Munich
 
-In the project directory, you can run:
+### main features
 
-### `yarn start`
+- Weather info for the next 5 days (40 segments)
+- A Barchart that showcases the evolution of the temperature through a given day. Updatable upon selecting on a different card
+- Clickable cards that display the date, average pressure, average temperature, and average humidity
+- A checkboxes switch that converts all the displayed temperature values from or to Fahrenheit or Celcius
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+In this app we used the following technologies:
 
-### `yarn test`
+HTML | CSS(SASS) | Javascript | React | Redux 
+------------ | ------------- | ----------- | ----------- | -----------
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" width="50" /> | <img src="https://img.icons8.com/windows/64/000000/sass.png"> | <img src="https://img.icons8.com/color/48/000000/javascript.png"> | <img src="https://img.icons8.com/officel/40/000000/react.png"> | <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--heipuOTP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://redux.js.org/img/redux.svg" width="50" />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## ✨ Live Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can look at it [here](https://proto-dashboard.netlify.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To get a local copy up and running follow these simple example steps.
 
-### `yarn eject`
+### Clone
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+git git@github.com:stratospherique/weather-app-react.git
+cd weather-app-react
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Usage
 
-## Learn More
+```sh
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Tests (Unit Test)
+- Helpers: `yarn test-helpers`
+- Reducers: `yarn test-reducers`
+- Actions: `yarn test-actions`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Todo :pencil:
+- Add dialog to select city/country(location)
 
-### Code Splitting
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+:male_detective: Ahmed Mahfoudh
 
-### Analyzing the Bundle Size
+- [Github](https://github.com/stratospherique)
+- [Linkedin](https://www.linkedin.com/in/ahmed-mahfoudh/)
+- [Twitter](https://twitter.com/AhmedMahfoudh8)
+- [Email](mailto:ahmed.mahfoudh1991@gmail.com?subject=Website%20Inquiry)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contributing
 
-### Making a Progressive Web App
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Feel free to check the [issues page](issues/).
 
-### Advanced Configuration
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Give a ⭐️ if you like this project!
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> “There is no exercise better for the heart than reaching down and lifting people up.” 
+John Holmes
