@@ -14,9 +14,9 @@ export const formatAPIData = (payload, segNum = 40, daysNum = 5) => {
         date: date.format('hh:mm a'),
         temp: payload[i].main.temp,
         humidity: payload[i].main.humidity,
-        pressure: payload[i].main.pressure,
-        description: payload[i].weather[0].description,
-        icon: `http://openweathermap.org/img/wn/${payload[i].weather[0].icon}@2x.png`
+        pressure: payload[i].main.pressure
+        // description: payload[i].weather[0].description
+        // icon: `http://openweathermap.org/img/wn/${payload[i].weather[0].icon}@2x.png`
       };
       if (dataPerDays.has(dateKey)) {
         dataPerDays.set(dateKey, [...dataPerDays.get(dateKey), item]);
@@ -43,12 +43,11 @@ function attributeAverage(arr, attr) {
     temp: number,
     humidity: number,
     pressure: number,
-    description: string,
-    icon: url
+    description: string
   }
 */
 export const formatDayCardData = (arr) => {
-  if (arr.size === 0) return null;
+  if (arr && arr.length === 0) return null;
   return {
     avgTemp: attributeAverage(arr, 'temp'),
     avgPressure: attributeAverage(arr, 'pressure'),
@@ -62,8 +61,7 @@ export const formatDayCardData = (arr) => {
     temp: number,
     humidity: number,
     pressure: number,
-    description: string,
-    date: string
+    description: string
   }
 */
 export function formatChartData(weatherDataArray, unit) {
