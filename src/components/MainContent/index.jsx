@@ -49,7 +49,7 @@ const MainContent = ({
   if (!loading && Object.keys(weatherData).length === 0) {
     return (
       <Grid className={classes.root} container alignItems="center" justify="center" item wrap="nowrap" xs={12} md={10} lg={8}>
-        <Typography variant="p" color="#F0F8FF">
+        <Typography variant="p" className={classes.message}>
           Failed to get Data from API
         </Typography>
         <ErrorIcon fontSize="small" color="error" />
@@ -63,7 +63,7 @@ const MainContent = ({
         loading ? (
           <>
             <CircularProgress aria-describedby="p" aria-busy={loading} style={{ margin: 16 }} />
-            <Typography variant="p" color="#F0F8FF">Loading...</Typography>
+            <Typography variant="p" className={classes.message}>Loading...</Typography>
           </>
         ) : (
           <>
@@ -79,7 +79,8 @@ const MainContent = ({
 
 MainContent.propTypes = {
   classes: PropTypes.shape({
-    root: PropTypes.string
+    root: PropTypes.string,
+    message: PropTypes.string.isRequired
   }).isRequired,
   actions: PropTypes.string.isRequired,
   weatherData: PropTypes.object.isRequired

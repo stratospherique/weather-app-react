@@ -37,7 +37,7 @@ const Barchart = ({ tempData, tempUnit }) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date" />
+          <XAxis dataKey="date" tick={{ fill: '#F0F8FF' }} />
           <YAxis dataKey="temp" unit={tempFormatter[tempUnit]} visibility="hidden" />
           <Tooltip labelStyle={{ color: '#183A5A' }} itemStyle={{ color: '#183A5A' }} />
           <Legend />
